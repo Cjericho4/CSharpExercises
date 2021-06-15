@@ -5,7 +5,7 @@ namespace CSharpPractice
 {
     class Program
     {
-        static BankAccount myAccount = new BankAccount();
+        static BankAccount myAccount = new BankAccount(1000);
         static void Main(string[] args)
         {
             string myAccountBalance = myAccount.CheckBalance();

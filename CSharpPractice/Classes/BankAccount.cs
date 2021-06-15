@@ -6,13 +6,19 @@ using System.Threading.Tasks;
 
 namespace CSharpPractice.Classes
 {
-    class BankAccount
+    public class BankAccount
     {
         public BankAccount()
         {
             Balance = 100;
         }
         private double Balance;
+
+        public BankAccount(double initialBalance)
+        {
+            Balance = initialBalance;
+        }
+
         public double balance {
             get
             {
@@ -21,7 +27,7 @@ namespace CSharpPractice.Classes
                 else
                     return Balance;
             }
-            private set
+            protected set
             {
                 if (value > 0)
                     Balance = value;
@@ -49,5 +55,14 @@ namespace CSharpPractice.Classes
         {
             return "You have " + Balance.ToString() + " in your account.";
         }
+    }
+
+    public class ChildBankAccount : BankAccount
+    {
+        public ChildBankAccount()
+        {
+            balance = 10;
+        }
+
     }
 }
