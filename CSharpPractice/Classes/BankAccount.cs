@@ -35,11 +35,11 @@ namespace CSharpPractice.Classes
                     balance = 0;
             }
         }
-        public double Deposit(double depositAmount)
+        public virtual double Deposit(double depositAmount)
         {
             return balance += depositAmount;
         }
-        public double Withdraw(double amount)
+        public virtual double Withdraw(double amount)
         {
             if(amount > Balance)
             {
@@ -63,6 +63,17 @@ namespace CSharpPractice.Classes
         {
             balance = 10;
         }
-
+        public override double Deposit(double depositAmount)
+        {
+            if (depositAmount > 1000)
+                depositAmount = 1000;
+            return base.Deposit(depositAmount);
+        }
+        public override double Withdraw(double amount)
+        {
+            if (amount > 1000)
+                amount = 1000;
+            return base.Withdraw(amount);
+        }
     }
 }
