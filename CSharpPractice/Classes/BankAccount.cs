@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CSharpPractice.Interfaces;
 
 namespace CSharpPractice.Classes
 {
-    public class BankAccount
+    public class BankAccount : ILearn
     {
         public BankAccount()
         {
@@ -51,9 +52,9 @@ namespace CSharpPractice.Classes
                 return balance -= amount;
             }
         }
-        public string CheckBalance()
+        public string GetInformation()
         {
-            return "You have " + Balance.ToString() + " in your account.";
+            return $"You have {balance:c} in your account.";
         }
     }
 
